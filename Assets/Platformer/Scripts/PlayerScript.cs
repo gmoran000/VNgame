@@ -30,7 +30,8 @@ public class PlayerScript : MonoBehaviour
     
     //My Sound Effects
     public AudioClip JumpSFX;
-    
+
+    public List<GameObject> Touching;
     void Start()
     {
         //Set our rigidbody's gravity to match our stats 
@@ -105,7 +106,7 @@ public class PlayerScript : MonoBehaviour
     //Can you find the bug?
     public bool CanJump()
     {
-        return OnGround;
+        return Touching.Count > 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

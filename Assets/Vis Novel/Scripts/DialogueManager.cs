@@ -16,11 +16,9 @@ public class DialogueManager : MonoBehaviour
 
     //A list of all the character sprites
     //I need to make this variables so I can reference them
-    public Sprite GaryDefault;
-    public Sprite GaryFrown;
-    public Sprite GaryWink;
-    public Sprite VampDefault;
-    public Sprite VampWink;
+    public Sprite Moondae;
+    //public Sprite GaryFrown;
+    //public Sprite GaryWink;
     
     //A list of all the background sprites
     public Sprite OutsideBG;
@@ -59,7 +57,7 @@ public class DialogueManager : MonoBehaviour
         if (Index >= Lines.Count)
         {
             //End the game
-            SceneManager.LoadScene("You Win");
+            SceneManager.LoadScene("TBC");
             return;
         }
 
@@ -77,12 +75,10 @@ public class DialogueManager : MonoBehaviour
     public Sprite GetCharacter(string who)
     {
         //If the dialogue line calls for "Gary", use this sprite
-        if (who == "Gary") return GaryDefault;
+        if (who == "Moondae") return Moondae;
         //And so on. . .
-        if (who == "Gary Wink") return GaryWink;
-        if (who == "Gary Frown") return GaryFrown;
-        if (who == "Vampire") return VampDefault;
-        if (who == "Vampire Wink") return VampWink;
+        //if (who == "Gary Wink") return GaryWink;
+        //if (who == "Gary Frown") return GaryFrown;
         //If Character is left blank, just don't change anything
         return Character.sprite;
     }
@@ -91,9 +87,9 @@ public class DialogueManager : MonoBehaviour
     public Sprite GetBackground(string where)
     {
         //If the dialogue line calls for "Outside", use this sprite
-        if (where == "Outside") return OutsideBG;
+        if (where == "Motel Room Ceiling") return OutsideBG;
         //If the dialogue line calls for "Inside", use this sprite
-        if (where == "Inside") return InsideBG;
+        if (where == "Bubble") return InsideBG;
         //If Background is left blank, just don't change anything
         return Background.sprite;
     }
