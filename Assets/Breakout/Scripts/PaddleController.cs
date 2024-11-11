@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,6 +37,6 @@ public class PaddleController : MonoBehaviour
     {
         //Currently, the ball keeps its old X velocity
         //This is an intentionally bad answer--can you fix it?
-        return ball.RB.velocity.x;
+        return (ball.transform.position.x - transform.position.x) * 5;
     }
 }

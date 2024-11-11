@@ -223,6 +223,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3593253116678424390, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593253116678424390, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0105
+      objectReference: {fileID: 0}
     - target: {fileID: 3840764758948648549, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
       propertyPath: m_Name
       value: DiaScene
