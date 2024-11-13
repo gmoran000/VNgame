@@ -9,20 +9,26 @@ public class DialogueManager : MonoBehaviour
 {
     //Text Component
     public TextMeshPro Text;
+    public TextMeshPro CharaName;
     //The SpriteRenderer that draws the speaking character
     public SpriteRenderer Character;
     //The SpriteRenderer that draws the background
     public SpriteRenderer Background;
+    public SpriteRenderer TextBox;
 
     //A list of all the character sprites
     //I need to make this variables so I can reference them
     public Sprite Moondae;
+    
+    
     //public Sprite GaryFrown;
     //public Sprite GaryWink;
     
     //A list of all the background sprites
     public Sprite OutsideBG;
-    public Sprite InsideBG;
+    public Sprite TextBoxBG;
+    //public Sprite InsideBG;
+    //public Sprite EffectBG;
     
     //A list of all the lines of dialogue
     //These will be read out by the characters in order
@@ -65,10 +71,12 @@ public class DialogueManager : MonoBehaviour
         DialogueLine current = Lines[Index];
         //Set the text to match that line's dialogue text
         Text.text = current.Text;
+        CharaName.text = current.CharaName;
         //Find the character art the line of dialogue requests
         Character.sprite = GetCharacter(current.Character);
         //Find the background art the line of dialogue requests
         Background.sprite = GetBackground(current.Background);
+        TextBox.sprite = GetTextBox(current.TextBox);
     }
 
     //Convert the text description of a character to a sprite
@@ -76,6 +84,7 @@ public class DialogueManager : MonoBehaviour
     {
         //If the dialogue line calls for "Gary", use this sprite
         if (who == "Moondae") return Moondae;
+        //if (who == "Text Box") return TextBox;
         //And so on. . .
         //if (who == "Gary Wink") return GaryWink;
         //if (who == "Gary Frown") return GaryFrown;
@@ -89,10 +98,17 @@ public class DialogueManager : MonoBehaviour
         //If the dialogue line calls for "Outside", use this sprite
         if (where == "Motel Room Ceiling") return OutsideBG;
         //If the dialogue line calls for "Inside", use this sprite
-        if (where == "Bubble") return InsideBG;
+        //if (where == "Bubble") return EffectBG;
         //If Background is left blank, just don't change anything
         return Background.sprite;
     }
+    
+    public Sprite GetTextBox(string where)
+    {
+        if (where == "Text Box") return TextBoxBG;
+        return TextBox.sprite;
+    }
+   
     
 }
 
@@ -104,6 +120,8 @@ public class DialogueLine
     //A custom class that just records dialogue, a character, and a background
     //Think of it almost like a Vector3, but for story instead of position
     public string Text;
+    public string CharaName;
     public string Character;
     public string Background;
+    public string TextBox;
 }

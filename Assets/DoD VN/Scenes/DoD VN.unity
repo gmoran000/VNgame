@@ -215,6 +215,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &531570255 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6363886815130893315, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+  m_PrefabInstance: {fileID: 1465195517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &736634375 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7288411535532275907, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+  m_PrefabInstance: {fileID: 1465195517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1465195517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +298,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3840764758948648549, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1465195522}
+    - targetCorrespondingSourceObject: {fileID: 5076896899218836672, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 413956395357120877, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -325,21 +344,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 1465195521}
+  CharaName: {fileID: 736634375}
   Character: {fileID: 1465195520}
   Background: {fileID: 1465195519}
+  TextBox: {fileID: 531570255}
   Moondae: {fileID: 21300000, guid: 8b4b1b3502bac4d4d9670fe199946aaf, type: 3}
   OutsideBG: {fileID: 21300000, guid: 486c414cc42d49241875b37d11035a36, type: 3}
-  InsideBG: {fileID: 0}
+  TextBoxBG: {fileID: 21300000, guid: 9e569238beb8fb443b105b76759aad6a, type: 3}
   Lines:
   - Text: Hello...
-    Character: Moondae
+    CharaName: ???
+    Character: 
     Background: Motel Room Ceiling
+    TextBox: 
   - Text: Oh..
+    CharaName: Moondae
     Character: Moondae
     Background: Motel Room Ceiling
+    TextBox: 
   - Text: Ah...
+    CharaName: Moondae
     Character: Moondae
     Background: Motel Room Ceiling
+    TextBox: 
   Index: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
