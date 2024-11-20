@@ -36,6 +36,9 @@ public class DialogueManager : MonoBehaviour
     public List<DialogueLine> Lines;
     //Which line of dialogue am I currently on?
     public int Index = 0;
+    public int CurrentLetter = 0;
+    public float TextTimer = 0;
+    
 
     void Start()
     {
@@ -51,9 +54,19 @@ public class DialogueManager : MonoBehaviour
         {
             //Set the current line of dialogue to the next one
             Index++;
+            CurrentLetter = 0;
             //And redo all the text and art to match it
-            ImprintLine();
+            //ImprintLine();
         }
+        
+        TextTimer -= Time.deltaTime;
+        if (TextTimer <= 0)
+        {
+            CurrentLetter++;
+            ImprintLine();
+            TextTimer = 0.1f;
+        }
+        
     }
 
     //Makes all the text and art match the dialogue line we're currently on
@@ -70,19 +83,21 @@ public class DialogueManager : MonoBehaviour
         //Find which line of dialogue we're currently on
         DialogueLine current = Lines[Index];
         //Set the text to match that line's dialogue text
-        Text.text = current.Text;
+        int shownLetters = Mathf.Min(CurrentLetter, current.Text.Length);
+        Text.text = current.Text.Substring(0, shownLetters);
         CharaName.text = current.CharaName;
         //Find the character art the line of dialogue requests
         Character.sprite = GetCharacter(current.Character);
         //Find the background art the line of dialogue requests
         Background.sprite = GetBackground(current.Background);
-        TextBox.sprite = GetTextBox(current.TextBox);
+        
     }
 
     //Convert the text description of a character to a sprite
     public Sprite GetCharacter(string who)
     {
         //If the dialogue line calls for "Gary", use this sprite
+        if (who == "") return null;
         if (who == "Moondae") return Moondae;
         //if (who == "Text Box") return TextBox;
         //And so on. . .
@@ -123,5 +138,4 @@ public class DialogueLine
     public string CharaName;
     public string Character;
     public string Background;
-    public string TextBox;
 }
