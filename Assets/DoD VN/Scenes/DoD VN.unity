@@ -386,11 +386,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &531570255 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6363886815130893315, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
-  m_PrefabInstance: {fileID: 1465195517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &736634375 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7288411535532275907, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
@@ -402,6 +397,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &798759525 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6363886815130893315, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+  m_PrefabInstance: {fileID: 1465195517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1207279525 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 382363568617464410, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+  m_PrefabInstance: {fileID: 1465195517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289422214
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +509,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1128528819500643072, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128528819500643072, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128528819500643072, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128528819500643072, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440440266782439940, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
+      propertyPath: m_Name
+      value: Text Box
+      objectReference: {fileID: 0}
     - target: {fileID: 3593253116678424390, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.93
@@ -618,29 +643,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: {fileID: 1465195521}
   CharaName: {fileID: 736634375}
+  TextBox: {fileID: 798759525}
   Character: {fileID: 1465195520}
   Background: {fileID: 1465195519}
-  TextBox: {fileID: 531570255}
+  Effect: {fileID: 1207279525}
   Moondae: {fileID: 21300000, guid: 8b4b1b3502bac4d4d9670fe199946aaf, type: 3}
   OutsideBG: {fileID: 21300000, guid: 486c414cc42d49241875b37d11035a36, type: 3}
   TextBoxBG: {fileID: 21300000, guid: 9e569238beb8fb443b105b76759aad6a, type: 3}
+  BathroomBG: {fileID: 21300000, guid: 699530a9fdbace544ac536ed394a5d34, type: 3}
+  BubbleBG: {fileID: 21300000, guid: a6f26d7a70ea68141947d85b602bbb9d, type: 3}
   Lines:
   - Text: 
     CharaName: 
+    TextBox: 
     Character: 
     Background: Motel Room Ceiling
-  - Text: Huh? .... Where am I?
+    Effect: 
+  - Text: Huh.... Where am I? I remember going home after drinking away my sorrows,
+      not some musty motel...
     CharaName: ???
-    Character: Moondae
+    TextBox: Box
+    Character: 
     Background: Motel Room Ceiling
-  - Text: I don't remember staying here.
+    Effect: 
+  - Text: Ugh- whatever... I'll just go wash up.
+    CharaName: ???
+    TextBox: Box
+    Character: 
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: Argh! What the f*ck? Who- Who is this...?
+    CharaName: ???
+    TextBox: Box
+    Character: 
+    Background: Bathroom
+    Effect: ACK
+  - Text: What!?
     CharaName: Moondae
+    TextBox: Box
     Character: Moondae
     Background: Motel Room Ceiling
-  - Text: Ugh, my head...
-    CharaName: Moondae
-    Character: Moondae
-    Background: Motel Room Ceiling
+    Effect: 
   Index: 0
   CurrentLetter: 0
   TextTimer: 0

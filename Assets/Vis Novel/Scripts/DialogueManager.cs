@@ -10,11 +10,12 @@ public class DialogueManager : MonoBehaviour
     //Text Component
     public TextMeshPro Text;
     public TextMeshPro CharaName;
+    public SpriteRenderer TextBox;
     //The SpriteRenderer that draws the speaking character
     public SpriteRenderer Character;
     //The SpriteRenderer that draws the background
     public SpriteRenderer Background;
-    public SpriteRenderer TextBox;
+    public SpriteRenderer Effect;
 
     //A list of all the character sprites
     //I need to make this variables so I can reference them
@@ -27,8 +28,8 @@ public class DialogueManager : MonoBehaviour
     //A list of all the background sprites
     public Sprite OutsideBG;
     public Sprite TextBoxBG;
-    //public Sprite InsideBG;
-    //public Sprite EffectBG;
+    public Sprite BathroomBG;
+    public Sprite BubbleBG;
     
     //A list of all the lines of dialogue
     //These will be read out by the characters in order
@@ -64,7 +65,7 @@ public class DialogueManager : MonoBehaviour
         {
             CurrentLetter++;
             ImprintLine();
-            TextTimer = 0.1f;
+            TextTimer = 0.03f;
         }
         
     }
@@ -90,7 +91,9 @@ public class DialogueManager : MonoBehaviour
         Character.sprite = GetCharacter(current.Character);
         //Find the background art the line of dialogue requests
         Background.sprite = GetBackground(current.Background);
-        
+        Effect.sprite = GetEffect(current.Effect);
+        TextBox.sprite = GetTextBox(current.TextBox);
+
     }
 
     //Convert the text description of a character to a sprite
@@ -99,9 +102,7 @@ public class DialogueManager : MonoBehaviour
         //If the dialogue line calls for "Gary", use this sprite
         if (who == "") return null;
         if (who == "Moondae") return Moondae;
-        //if (who == "Text Box") return TextBox;
-        //And so on. . .
-        //if (who == "Gary Wink") return GaryWink;
+        
         //if (who == "Gary Frown") return GaryFrown;
         //If Character is left blank, just don't change anything
         return Character.sprite;
@@ -111,16 +112,34 @@ public class DialogueManager : MonoBehaviour
     public Sprite GetBackground(string where)
     {
         //If the dialogue line calls for "Outside", use this sprite
+        if (where == "") return null;
         if (where == "Motel Room Ceiling") return OutsideBG;
+        if (where == "Bathroom") return BathroomBG;
         //If the dialogue line calls for "Inside", use this sprite
-        //if (where == "Bubble") return EffectBG;
+        //if (where == "ACK") return BubbleBG;
         //If Background is left blank, just don't change anything
         return Background.sprite;
     }
     
-    public Sprite GetTextBox(string where)
+    public Sprite GetEffect(string what)
     {
-        if (where == "Text Box") return TextBoxBG;
+        //If the dialogue line calls for "Gary", use this sprite
+        if (what == "") return null;
+        if (what == "ACK") return BubbleBG;
+        
+        //if (who == "Gary Frown") return GaryFrown;
+        //If Character is left blank, just don't change anything
+        return Effect.sprite;
+    }
+    
+    public Sprite GetTextBox(string what)
+    {
+        //If the dialogue line calls for "Gary", use this sprite
+        if (what == "") return null;
+        if (what == "Box") return TextBoxBG;
+        
+        //if (who == "Gary Frown") return GaryFrown;
+        //If Character is left blank, just don't change anything
         return TextBox.sprite;
     }
    
@@ -136,6 +155,8 @@ public class DialogueLine
     //Think of it almost like a Vector3, but for story instead of position
     public string Text;
     public string CharaName;
+    public string TextBox;
     public string Character;
     public string Background;
+    public string Effect;
 }

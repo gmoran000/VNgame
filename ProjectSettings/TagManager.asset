@@ -9,6 +9,7 @@ TagManager:
   - HWall
   - Hazard
   - Exit
+  - Text
   layers:
   - Default
   - TransparentFX
