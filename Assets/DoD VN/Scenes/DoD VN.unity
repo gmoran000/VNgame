@@ -402,6 +402,134 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6363886815130893315, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
   m_PrefabInstance: {fileID: 1465195517}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &934458019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934458020}
+  - component: {fileID: 934458021}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934458020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934458019}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.27, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1734844786}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &934458021
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934458019}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cd6ac3e8236402c4d8be59aa09a9babd, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &1207279525 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 382363568617464410, guid: 4a54f967351e74d40a126a6b8be5b40b, type: 3}
@@ -659,8 +787,8 @@ MonoBehaviour:
     Character: 
     Background: Motel Room Ceiling
     Effect: 
-  - Text: Huh.... Where am I? I remember going home after drinking away my sorrows,
-      not some musty motel...
+  - Text: Ugh... my head. Where am I? I was drinking alone in my apartment not some
+      musty motel...
     CharaName: ???
     TextBox: Box
     Character: 
@@ -672,13 +800,62 @@ MonoBehaviour:
     Character: 
     Background: Motel Room Ceiling
     Effect: 
-  - Text: Argh! What the f*ck? Who- Who is this...?
+  - Text: What the f*ck?!
     CharaName: ???
     TextBox: Box
     Character: 
     Background: Bathroom
     Effect: ACK
-  - Text: What!?
+  - Text: Who- Who is this...?
+    CharaName: ???
+    TextBox: Box
+    Character: 
+    Background: Bathroom
+    Effect: 
+  - Text: Now that I look at it, there seems to be an empty pill bottle... and a
+      letter... great.
+    CharaName: ???
+    TextBox: Box
+    Character: Moondae
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: Oh! There's a wallet-
+    CharaName: ???
+    TextBox: Box
+    Character: Moondae
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: Moondae, huh?
+    CharaName: Moondae
+    TextBox: Box
+    Character: Moondae
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: But what is this? Its not like this is some fantasy setting.... Unless-
+    CharaName: Moondae
+    TextBox: Box
+    Character: Moondae
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: Status window?
+    CharaName: Moondae
+    TextBox: Box
+    Character: Moondae
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: ... of cour-
+    CharaName: Moondae
+    TextBox: Box
+    Character: Moondae
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: 
+    CharaName: 
+    TextBox: 
+    Character: 
+    Background: Motel Room Ceiling
+    Effect: 
+  - Text: Wait- or die?
     CharaName: Moondae
     TextBox: Box
     Character: Moondae
@@ -687,6 +864,38 @@ MonoBehaviour:
   Index: 0
   CurrentLetter: 0
   TextTimer: 0
+--- !u!1 &1734844785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734844786}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1734844786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734844785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.1399994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 934458020}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1999329422
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,3 +998,4 @@ SceneRoots:
   - {fileID: 1465195517}
   - {fileID: 310721973}
   - {fileID: 36125004}
+  - {fileID: 1734844786}
