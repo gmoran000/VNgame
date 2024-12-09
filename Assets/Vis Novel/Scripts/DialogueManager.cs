@@ -28,9 +28,9 @@ public class DialogueManager : MonoBehaviour
     public Sprite OutsideBG;
     public Sprite TextBoxBG;
     public Sprite BathroomBG;
-    //public Sprite RoomBG;
+    public Sprite RoomBG;
     public Sprite BubbleBG;
-    //public Sprite PopUpBG;
+    public Sprite PopUpBG;
     
     //A list of all the lines of dialogue
     //These will be read out by the characters in order
@@ -116,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         if (where == "") return null;
         if (where == "Motel Room Ceiling") return OutsideBG;
         if (where == "Bathroom") return BathroomBG;
-        //if (where == "Room") return RoomBG;
+        if (where == "Room") return RoomBG;
         //If Background is left blank, just don't change anything
         return Background.sprite;
     }
@@ -126,7 +126,7 @@ public class DialogueManager : MonoBehaviour
         //If the dialogue line calls for "Gary", use this sprite
         if (what == "") return null;
         if (what == "ACK") return BubbleBG;
-        //if (what == "Pop") return PopUpBG;
+        if (what == "Pop") return PopUpBG;
         
         //if (who == "Gary Frown") return GaryFrown;
         //If Character is left blank, just don't change anything
